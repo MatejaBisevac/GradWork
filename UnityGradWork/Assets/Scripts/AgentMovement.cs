@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.MLAgents;
+using Unity.MLAgents.Actuators;
+using Unity.MLAgents.Sensors;
 using UnityEngine;
 
 public class AgentMovement : Agent
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void OnActionReceived(ActionBuffers actions)
     {
-        Rigidbody2D test = new Rigidbody2D();
+        Debug.Log(actions.DiscreteActions[0]);
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void CollectObservations(VectorSensor sensor)
     {
         
     }
+
 }
